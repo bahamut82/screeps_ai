@@ -1,5 +1,7 @@
 # ToDos / Next steps:
 
+- Auto Deploy using Grunt
+	- needs project structure as an NPM package?
 - creep path-finding with custom cache
     - creep.Memory saves path
     - determine new path in every tick
