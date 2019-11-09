@@ -1,0 +1,22 @@
+# ToDos / Next steps:
+
+- creep path-finding with custom cache
+    - creep.Memory saves path
+    - determine new path in every tick
+    - compare new path cost vs. saved path cost => choose cheaper path for move
+    - minCost for custom logic ~20 or something?! (avoid clogging)
+    - taskManager.finishTask clears creep.Memory path(?)
+- new task: pick-up resources from ground (decayed creeps => tombstones or raw resources after tombstone expires, deliberately dropped resources)
+    - maybe 2 tasks: random resources (force pick-up) & resources from "around" sources
+    - think about how to involve in task priority list
+    - separate logic could also determine the nearest creep for force pick-up
+        - needs free capacity
+        - ground resource could be > free capacity ==> multiple creeps need force pick-up
+- new role: miner
+    - mining resources and dropping them on the ground for others to pick up
+    - potentially: remove harvester or at least don't use it anymore
+- potentially new role: transporter
+    - no WORK body-parts, only CARRY and MOVE
+    - transporting dropped resources to storage units (spawn, extensions, towers, etc)
+- build "Links"
+- RCL 8: build Observer
