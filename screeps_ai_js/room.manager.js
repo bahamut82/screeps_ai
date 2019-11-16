@@ -1,7 +1,8 @@
 // snippet
-// var rcManager = require('roomController.manager'); rcManager.initAccessPoints(Game.rooms['E36N43']);
+// var roomManager = require('room.manager'); roomManager.initAccessPoints(Game.rooms['E36N43']);
+// var roomManager = require('room.manager'); roomManager.initTaggedTargets(Game.rooms['E36N43']);
 
-var rcManager = {
+var roomManager = {
     
     initAccessPoints : function(room) {
         var center = room.controller.pos;
@@ -35,10 +36,15 @@ var rcManager = {
                 room.memory.rcAccessPoints.push( new RoomPosition(closestCell.x, closestCell.y, room.name) );
             }
         }
+    },
 
+    initTaggedTargets : function(room) {
+    	// used to track the number of creeps "working" on a given target.
+    	// different kinds of targets might have different max numbers of creeps simultaneously working on them
+    	room.memory.taggedTargets = new Object();
     }
     
 }
 
 
-module.exports = rcManager;
+module.exports = roomManager;
